@@ -13,6 +13,7 @@ export class TableComponent implements OnInit {
   currentPage = 1;
   total = 0;
   loading = true;
+  selected;
   constructor(private peopleService: PeopleService) {
 
   }
@@ -22,6 +23,7 @@ export class TableComponent implements OnInit {
 
   refresh(state: ClrDatagridStateInterface) {
     this.loading = true;
+    this.selected = undefined;
     this.peopleService.get(this.currentPage).subscribe((data) => {
       this.people = data.results;
       this.total = data.count;

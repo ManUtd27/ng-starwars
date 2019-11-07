@@ -1,13 +1,20 @@
 <div class="clr-row">
   <div class="clr-col-sm-12 clr-col-md-7" style="margin: 2px">
     <h3>Pick Your Star Wars Captain</h3>
-    <clr-datagrid (clrDgRefresh)="refresh($event)" [clrDgLoading]="loading">
+    <clr-datagrid (clrDgRefresh)="refresh($event)" [clrDgLoading]="loading" [(clrDgSingleSelected)]="selected">
       <clr-dg-column>Name</clr-dg-column>
-      <clr-dg-column>Birth Year</clr-dg-column>
+      <clr-dg-column>Birth Year
+        <clr-tooltip>
+          <clr-icon clrTooltipTrigger shape="info-circle" size="24" aria-label="Uniq tooltip 2"></clr-icon>
+          <clr-tooltip-content clrPosition="bottom-right" clrSize="md" *clrIfOpen>
+            <span>BBY - Before the Battle of Yavin</span>
+          </clr-tooltip-content>
+        </clr-tooltip>
+      </clr-dg-column>
       <clr-dg-column>Gender</clr-dg-column>
 
 
-      <clr-dg-row *ngFor="let person of people">
+      <clr-dg-row *ngFor="let person of people" [clrDgItem]="person">
         <clr-dg-cell>{{person.name}}</clr-dg-cell>
         <clr-dg-cell>{{person.birth_year}}</clr-dg-cell>
         <clr-dg-cell>{{person.gender}}</clr-dg-cell>
@@ -23,23 +30,45 @@
     </clr-datagrid>
   </div>
   <div class="clr-col-sm-12 clr-col-md-4" style="margin: 2px">
-    <h3>Card Title</h3>
-    <div class="card">
-      <div class="card-header">
-        Header
-      </div>
-      <div class="card-block">
-        <div class="card-title">
-          Block
+    <ng-container *ngIf="selected">
+      <h3>You've selected</h3>
+      <div class="card">
+        <clr-alert *ngIf="selected.starships.length == 0" [clrAlertSizeSmall]="true" [clrAlertType]="'warning'">
+          <div class="alert-item">
+            <span class="alert-text">
+              {{ selected.name }} has no starships. May be difficult to get around.
+            </span>
+          </div>
+        </clr-alert>
+        <div class="card-header">
+          {{ selected.name}}
         </div>
-        <div class="card-text">
-          ...
+        <div class="card-block">
+          <div class="card-title">
+            Details
+          </div>
+          <div class="card-text">
+            <ul class="list-unstyled">
+              <li>Height: {{selected.height}}</li>
+              <li>Mass: {{selected.mass}}</li>
+              <li>Hair Color: {{selected.hair_color}}</li>
+              <li>Eye Color: {{selected.eye_color}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="clr-col-sm-6 clr-col-md-6">
+              <clr-icon shape="car"></clr-icon>
+              {{selected.vehicles.length}} vehicles
+            </div>
+            <div class="clr-col-sm-6 clr-col-md-6">
+              <clr-icon shape="plane"></clr-icon>
+              {{selected.starships.length}} starships
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card-footer">
-        <button class="btn btn-sm btn-link">Footer Action 1</button>
-        <button class="btn btn-sm btn-link">Footer Action 2</button>
-      </div>
-    </div>
+    </ng-container>
   </div>
 </div>
