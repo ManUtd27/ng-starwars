@@ -1,24 +1,51 @@
-<header class="header-6">
-  <div class="branding">
-    <a [routerLink]="['/']" class="nav-link">
-      <clr-icon shape="vm-bug"></clr-icon>
-      <span class="title">Star Wars</span>
-    </a>
+<div class="main-container">
+  <div *ngIf="false" class="alert alert-app-level">
+    ...
   </div>
-  <div class="header-nav" [clr-nav-level]="1">
-    <a href="#" [routerLink]="['/landing']" routerLinkActive="active" class="nav-link">
-      <span class="nav-text">Home</span>
-    </a>
-  </div>
-  <div class="header-actions">
-    <a href="javascript://" class="nav-link nav-icon-text">
-      <clr-icon shape="user"></clr-icon>
-      <span class="nav-text">username</span>
-    </a>
-  </div>
-</header>
-<div class="content-container">
-  <div class="content-area">
-    <app-table></app-table>
+  <header class="header header-6">
+    <div class="branding">
+      <a [routerLink]="['/']" class="nav-link">
+        <clr-icon shape="vm-bug"></clr-icon>
+        <span class="title">Star Wars</span>
+      </a>
+    </div>
+    <div class="header-nav" [clr-nav-level]="1">
+      <a href="#" [routerLink]="['/landing']" routerLinkActive="active" class="nav-link">
+        <span class="nav-text">Home</span>
+      </a>
+    </div>
+    <div class="header-actions">
+      <a href="javascript://" class="nav-link nav-icon-text">
+        <clr-icon shape="user"></clr-icon>
+        <span class="nav-text">username</span>
+      </a>
+    </div>
+  </header>
+  <nav class="subnav">
+    Place Holder for subnav
+  </nav>
+  <div class="content-container">
+    <div class="content-area">
+      <app-table></app-table>
+    </div>
+    <nav class="sidenav">
+      Place holder for side nav
+    </nav>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
