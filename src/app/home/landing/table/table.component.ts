@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
+  users = [{id: 1, name: 'Shawn'}, {id: 2, name: 'Amanda'}];
   constructor() { }
 
   ngOnInit() {

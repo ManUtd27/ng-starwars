@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { LandingComponent } from './landing/landing.component';
-import {ClrIconModule, ClrNavigationModule} from '@clr/angular';
+import {ClrDatagridModule, ClrIconModule, ClrNavigationModule} from '@clr/angular';
 import { TableComponent } from './landing/table/table.component';
 
 
@@ -13,7 +13,8 @@ import { TableComponent } from './landing/table/table.component';
     CommonModule,
     HomeRoutingModule,
     ClrIconModule,
-    ClrNavigationModule
+    ClrNavigationModule,
+    ClrDatagridModule
   ]
 })
 export class HomeModule { }
