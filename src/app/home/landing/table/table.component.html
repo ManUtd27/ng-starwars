@@ -1,20 +1,45 @@
 <div class="clr-row">
-  <div class="clr-col-sm-12 clr-col-md-8">
+  <div class="clr-col-sm-12 clr-col-md-7" style="margin: 2px">
     <h3>Pick Your Star Wars Captain</h3>
-    <clr-datagrid>
-      <clr-dg-column>User ID</clr-dg-column>
+    <clr-datagrid (clrDgRefresh)="refresh($event)" [clrDgLoading]="loading">
       <clr-dg-column>Name</clr-dg-column>
+      <clr-dg-column>Birth Year</clr-dg-column>
+      <clr-dg-column>Gender</clr-dg-column>
 
 
-      <clr-dg-row *ngFor="let user of users">
-        <clr-dg-cell>{{user.id}}</clr-dg-cell>
-        <clr-dg-cell>{{user.name}}</clr-dg-cell>
+      <clr-dg-row *ngFor="let person of people">
+        <clr-dg-cell>{{person.name}}</clr-dg-cell>
+        <clr-dg-cell>{{person.birth_year}}</clr-dg-cell>
+        <clr-dg-cell>{{person.gender}}</clr-dg-cell>
       </clr-dg-row>
 
-      <clr-dg-footer>{{users.length}} users</clr-dg-footer>
+      <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="10" [(clrDgPage)]="currentPage" [clrDgTotalItems]="total">
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+          of {{pagination.totalItems}} users
+        </clr-dg-pagination>
+
+      </clr-dg-footer>
     </clr-datagrid>
   </div>
-  <div class="clr-col-sm-12 clr-col-md-4">
-    Card
+  <div class="clr-col-sm-12 clr-col-md-4" style="margin: 2px">
+    <h3>Card Title</h3>
+    <div class="card">
+      <div class="card-header">
+        Header
+      </div>
+      <div class="card-block">
+        <div class="card-title">
+          Block
+        </div>
+        <div class="card-text">
+          ...
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-link">Footer Action 1</button>
+        <button class="btn btn-sm btn-link">Footer Action 2</button>
+      </div>
+    </div>
   </div>
 </div>
