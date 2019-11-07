@@ -5,6 +5,11 @@
       <span class="title">Star Wars</span>
     </a>
   </div>
+  <div class="header-nav" [clr-nav-level]="1">
+    <a href="#" [routerLink]="['/landing']" routerLinkActive="active" class="nav-link">
+      <span class="nav-text">Home</span>
+    </a>
+  </div>
   <div class="header-actions">
     <a href="javascript://" class="nav-link nav-icon-text">
       <clr-icon shape="user"></clr-icon>
@@ -12,3 +17,4 @@
     </a>
   </div>
 </header>
+<app-table></app-table>
