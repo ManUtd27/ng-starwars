@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login/login.component';
 import {ClrCheckboxModule, ClrInputModule, ClrPasswordModule, ClrSelectModule, ClrWizardModule} from '@clr/angular';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import {FormsModule} from '@angular/forms';
     ClrPasswordModule,
     ClrCheckboxModule,
     FormsModule,
-    ClrWizardModule
+    ClrWizardModule,
+    ReactiveFormsModule
   ]
 })
 export class LoginModule { }
