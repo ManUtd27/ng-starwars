@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { LandingComponent } from './landing/landing.component';
-import {ClrAlertModule, ClrDatagridModule, ClrIconModule, ClrNavigationModule, ClrTooltipModule} from '@clr/angular';
+import {ClrAlertModule, ClrDatagridModule, ClrIconModule, ClrNavigationModule, ClrTooltipModule, ClrVerticalNavModule} from '@clr/angular';
 import { TableComponent } from './landing/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     ClrNavigationModule,
     ClrDatagridModule,
     ClrTooltipModule,
-    ClrAlertModule
+    ClrAlertModule,
+    ClrVerticalNavModule
   ]
 })
 export class HomeModule { }

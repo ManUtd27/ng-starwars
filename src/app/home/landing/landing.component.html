@@ -9,11 +9,6 @@
         <span class="title">Star Wars</span>
       </a>
     </div>
-    <div class="header-nav" [clr-nav-level]="1">
-      <a href="#" [routerLink]="['/landing']" routerLinkActive="active" class="nav-link">
-        <span class="nav-text">Home</span>
-      </a>
-    </div>
     <div class="header-actions">
       <a href="javascript://" class="nav-link nav-icon-text">
         <clr-icon shape="user"></clr-icon>
@@ -21,16 +16,36 @@
       </a>
     </div>
   </header>
-  <nav class="subnav">
-    Place Holder for subnav
-  </nav>
   <div class="content-container">
     <div class="content-area">
       <app-table></app-table>
     </div>
-    <nav class="sidenav">
-      Place holder for side nav
-    </nav>
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
+      <a clrVerticalNavLink [routerLink]="['/landing']" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="user"></clr-icon>
+        Home
+      </a>
+      <a clrVerticalNavLink routerLink="./electric" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="bolt"></clr-icon>
+        Electric
+      </a>
+      <a clrVerticalNavLink routerLink="./poison" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="sad-face"></clr-icon>
+        Poison
+      </a>
+      <a clrVerticalNavLink routerLink="./grass" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="bug"></clr-icon>
+        Grass
+      </a>
+      <a clrVerticalNavLink routerLink="./fighting" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="shield"></clr-icon>
+        Fighting
+      </a>
+      <a clrVerticalNavLink routerLink="./credit" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="certificate"></clr-icon>
+        Credit
+      </a>
+    </clr-vertical-nav>
   </div>
 </div>
 
